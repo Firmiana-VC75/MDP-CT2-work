@@ -1,209 +1,105 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Unity Goin Game</title>
-
-    <style>
-      * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: lightblue !important;
-    color: #333;
-    line-height: 1.6;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.section {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    margin-bottom: 40px;
-    padding: 30px;
-}
-
-.section-title {
-    color: #2a6fb3;
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    border-bottom: 3px solid #ff7f50;
-    padding-bottom: 10px;
-}
-
-.development-subsection {
-    margin-bottom: 40px;
-    padding-bottom: 30px;
-    border-bottom: 1px solid #e0e0e0;
-}
-
-.development-subsection:last-child {
-    border-bottom: none;
-}
-
-.subsection-title {
-    color: #ff7f50;
-    font-size: 1.8em;
-    margin-bottom: 20px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #2a6fb3;
-}
-
-.section-content {
-    display: flex;
-    flex-direction: column;
-}
-
-.text-content {
-    margin-bottom: 20px;
-}
-
-        .image-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center; /* 垂直居中 */
-    gap: 20px; /* 控制图片间隙 */
-}
-
-.image-container img {
-    max-width: 45%; /* 略微减小宽度 */
-    height: 250px;
-    object-fit: cover;
-    border-radius: 8px;
-}
-        
-video {
-     width: 100%;
-     max-height: 500px;
-     margin: 20px 0;
-}
-        
-
-        @media (max-width: 768px) {
-            .image-container img {
-                max-width: 100%;
-            }
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream Place - Unity Modeling</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+    <header>
+        <h1>Unity Coin Game</h1>
+    </header>
+
     <div class="container">
-        <div class="section">
-            <h1 class="section-title">My Concept</h1>
-            <div class="section-content">
-                <div class="text-content">
-                    <p>In this project, I wanted to develop a gold coin eating game through Unity.
-                    The inspiration for the game is Metro Runner. I've loved this game since middle school and I still play it today.
-                    I refer to the tutorials of the game on the tube. This tutorial is very useful.</p>
-                </div>
-                <div class="image-container">
-                    <img src="images/run.png" alt="refer1">
-                    <img src="images/youtube.png" alt="refer2">
-                </div>
+        <section>
+            <h2>My Concept</h2>
+            <p>
+                In this project, I wanted to develop a gold coin eating game through Unity.
+                The inspiration for the game is Metro Runner. I've loved this game since middle school and I still play it today.
+                I refer to the tutorials of the game on the tube. This tutorial is very useful.
+            </p>
+              <div class="image-grid">
+                <img src="images/run.png" alt="Concept">
+                <img src="images/youtube.png" alt="Concept">
             </div>
-        </div>
+        </section>
 
-        <div class="section">
-            <h1 class="section-title">Development Process</h1>
-            <div class="development-subsection">
-                <h2 class="subsection-title">Model Design</h2>
-                <div class="section-content">
-                    <div class="text-content">
-                        <p>I started out using squares as player models, and also modeled walls after cubes.
-                            I also designed the finish line at the end of the runway.</p>
-                    </div>
-                    <div class="image-container">
-                        <img src="images/wall.png" alt="model1">
-                        <img src="images/coin.png" alt="model2">
-                    </div>
-                </div>
+        <section>
+            <h2>Modeling</h2>
+            <p>
+                I started out using squares as player models, and also modeled walls after cubes.
+                I also designed the finish line at the end of the runway.
+            </p>
+            <div class="image-grid">
+                <img src="images/wall.png" alt="Concept Sketch 1">
+                <img src="images/coin.png" alt="Concept Sketch 2">
+                <img src="images/endline.png" alt="Concept Sketch 3">
             </div>
+        </section>
 
-            <div class="development-subsection">
-                <h2 class="subsection-title">Canvas and Button</h2>
-                <div class="section-content">
-                    <div class="text-content">
-                        <p>I have collision triggers and a points mechanic in the game.
-                            When a player touches a wall the game fails. Players can get points by colliding gold coins.</p>
-                    </div>
-                    <div class="image-container">
-                        <img src="images/gameover.png" alt="Gameover">
-                        <img src="images/canvas.png" alt="score">
-                    </div>
-                </div>
+        <section>
+            <h2>Intercations</h2>
+            <p>
+                I have collision triggers and a points mechanic in the game.
+                When a player touches a wall the game fails. Players can get points by colliding gold coins.
+            </p>
+            <img src="images/gameover.png" alt="Trigger">
+            <img src="images/canvas.png" alt="Trigger">
+            <img src="images/die.png" alt="Trigger">
+            <p>
+                Depressed areas need to be filled with water.
+                At the same time I used the smoothing brush to make the mountain paths,
+                and the plains where the house is placed.
+            </p>
+        </section>
+
+        <section>
+            <h2>Challenges </h2>
+            <p>
+                I encountered multiple technical challenges during the development process.
+                The video clearly documents that when I tested it, all the gold coins flew away.
+            </p>
+            <div class="image-grid">
+                <video src="video/problem.mp4" controls alt="problem"></video>   
+
+                <p>I tried many things: like combining coins, or adding rigdbody to each coin.
+                    I even restarted unity. However the problem is still not solved.
+                Until I realized that there is something wrong with the model of the gold coins.
+                Because my gold coin model is downloaded from the internet, it is a prefab.
+                I didn't release the package body when I copied and pasted it, which caused my code can't apply to each gold coin.
+                I ended up re-adding each gold coin as a separate model and this problem was solved.</p>
+                <img src="images/problem.png" alt="Slove">
             </div>
+        </section>
 
-            <div class="section">
-                <h1 class="section-title">Challenges</h1>
-                <div class="section-content">
-                    <div class="text-content">
-                        <p>I encountered multiple technical challenges during the development process.
-                            The video clearly documents that when I tested it, all the gold coins flew away.</p>
-                        <video src="video/problem.mp4" controls alt="Challenges"></video>
-                        <p>I tried many things: like combining coins, or adding rigdbody to each coin.
-                            I even restarted unity. However the problem is still not solved.
-                        Until I realized that there is something wrong with the model of the gold coins.
-                        Because my gold coin model is downloaded from the internet, it is a prefab.
-                        I didn't release the package body when I copied and pasted it, which caused my code can't apply to each gold coin.
-                        I ended up re-adding each gold coin as a separate model and this problem was solved.</p>
-                    </div>
-                    <div class="image-container">
-                        <img src="images/problem.png" alt="slove">
-                    </div>
-                </div>
-            </div>
+        <section>
+            <h2>Visual</h2>
+            <p>
+                Finally, I added some details: adjusted lighting, added gold coin rotation animation,
+                replaced player model with a truck.
+            </p>
+            <img src="images/truck.png" alt="Model">
+        </section>
 
-            <div class="development-subsection">
-                <h2 class="subsection-title">Polishing</h2>
-                <div class="section-content">
-                    <div class="text-content">
-                        <p>Finally, I added some details: adjusted lighting, added gold coin rotation animation,
-                            replaced player model with a truck.</p>
-                    </div>
-                    <div class="image-container">
-                        <img src="images/truck.png" alt="Screenshot">
-                    </div>
-                </div>
-            </div>
-        </div>
+        <section>
+            <h2>Arduino and Hardware</h2>
+            <p>
+                I spent a lot of time for the game and the Arduino link.
+                The numerical references were hard to define and I had to try different values
+                over and over again to achieve the desired effect. The prefect value is 5!
+            </p>
+            <img src="images/movecode.png" alt="Arduino">
+            <img src="images/connect10.png" alt="value">
+            <img src="images/Hardware.jpg" alt="Hardware">
+        </section>
 
-            <div class="development-subsection">
-                <h2 class="subsection-title">Arduino</h2>
-                <div class="section-content">
-                    <div class="text-content">
-                        <p>I spent a lot of time for the game and the Arduino link.
-                            The numerical references were hard to define and I had to try different values
-                            over and over again to achieve the desired effect. The prefect value is 5!</p>
-                    </div>
-                    <div class="image-container">
-                        <img src="images/movecode.png" alt="Arduino">
-                        <img src="images/connect10.png" alt="Values">
-                        <img src="images/Hardware.jpg" alt="Values">
-                    </div>
-                </div>
-            </div>
-
-
-        <div class="section">
-            <h1 class="section-title">Final Game</h1>
-            <div class="section-content">
-                <video src="video/play.mp4" controls alt="Keyboard Play"></video>
-                <video src="video/Sensor.mp4" controls alt="Sensor play"></video>
-
-                </div>
-            </div>
-        </div>
+        <section>
+            <h2>Final Video</Video></h2>
+            <video src="video/play.mp4" controls alt="Final Walkthrough"></video>
+            <video src="video/Sensor.mp4" controls alt="Final Walkthrough"></video>
+        </section>
     </div>
 </body>
 </html>
