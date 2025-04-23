@@ -63,10 +63,17 @@ body {
 .image-container {
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
+    align-items: center; /* 垂直居中 */
+    gap: 20px; /* 控制图片间隙 */
 }
 
-.image-container img,
+.image-container img {
+    max-width: 45%; /* 略微减小宽度 */
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
 .section-content video {
     max-width: 48%;
     height: 250px;
@@ -76,9 +83,7 @@ body {
     transition: transform 0.3s ease;
 }
 
-.image-container img:hover {
-    transform: scale(1.05);
-}
+
 
 video {
     width: 100%;
