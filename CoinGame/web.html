@@ -50,17 +50,18 @@
         }
 
         .image-container {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-        }
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* 垂直居中 */
+    gap: 20px; /* 控制图片间隙 */
+}
 
-        .image-container img {
-            max-width: 48%;
-            height: auto;
-            border-radius: 8px;
-            margin-bottom: 15px;
-        }
+.image-container img {
+    max-width: 45%; /* 略微减小宽度 */
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+}
         
         video {
             width: 100%;
@@ -159,7 +160,7 @@
         </div>
 
             <div class="development-subsection">
-                <h2 class="subsection-title">Arduino/h2>
+                <h2 class="subsection-title">Arduino</h2>
                 <div class="section-content">
                     <div class="text-content">
                         <p>I spent a lot of time for the game and the Arduino link.
