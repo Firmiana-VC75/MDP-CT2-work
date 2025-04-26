@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TouchDesigner Practice</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>TouchDesigner Practice</h1>
+    </header>
+
+<div class="container">
+    <section>
+        <h2>Project Brief</h2>
+        <p>The program didn't point to ask me to do anything specific. The professor gave students the freedom to explore the features in TouchDesigner and generate at least 20 different 2D or 3D images. This was my first in-depth study of TouchDesigner and I referenced a <a href="https://www.youtube.com/@acrylicode" target="_blank" rel="noopener noreferrer">blogger on YouTube</a>. Her instructional videos are of high quality and I am continuing to learn.</p>
+    </section>
+
+    <section>
+        <h2>Explore the noise function</h2>
+        <p>
+            Noise is the most common and versatile function in TouchDesigner. In these four different animations, I explored the influence of noise on patterns and models. In the second form, I added a sliding button to control the distribution of noise.
+            <video src="video/Noise.mp4" controls alt="Try Noise"></video>
+        </p>
+    </section>
+
+    <section>
+        <h2>Feedback Operator</h2>
+        <p>
+            Feedback allows blending the image of the current frame with the previous frame to create a time-accumulation effect.I've implemented these features of retaining tracks, transparency overlays and image repeat playback through feedback.
+            <video src="video/feedback.mp4" controls alt="Try Feedback"></video>
+        </p>
+    </section>
+
+    <section>
+        <h2>Process</h2>
+        <p>
+            Through my previous explorations, I was able to turn Noise into colors, but I felt they were too bright and looked dizzying. So I added an HSV Adjustment component. With this component, I can change the hue, saturation, and brightness.
+        </p>
+        <div class="image-grid">
+            <img src="images/BW.png" alt="Black and White">
+            <img src="images/adjust.png" alt="Noise Color">
+            <img src="images/after.png" alt="HSV adj">
+        </div>
+    </section>
+
+    <section>
+        <h2>Challenge</h2>
+        <p>
+            When I was doing the fifth effect, I found that changing the value of Invert reversed the color values of the image. I liked both effects so much that I wanted to keep them all, but I didn't know how to make it automatically convert. Maxim instructed me to use LFOs to generate periodic signals as a way to control dynamic changes.
+        </p>
+        <img src="images/lfo.png" alt="LFO">
+    </section>
+
+    <section>
+        <h2>Self Exploration</h2>
+        <p>
+            I didn't refer to tutorials as I explored Feedback. I tried to link different components to a base dynamic.
+        </p>
+        <img src="images/basic.png" alt="Basic Cicrle"> 
+        <p>I found the Mirror function in TOP. So I play around.</p>
+        <img src="images/try.png" alt="Play">
+        <img src="images/try1.png" alt="Try1">
+        <img src="images/try2.png" alt="Try2">
+    </section>
+
+    <section>
+        <h2>Mix and Process</h2>
+        <p>
+            I started experimenting with linking Noise and Feedback and creating more animations in conjunction with other components.
+            In addition to the 2D patterns, I also used some of the SOP models that come with the system this time to create a 3D effect.
+        </p>
+        <img src="images/geo.png" alt="Geo">
+        <video src="video/Mix.mp4" controls alt="Mix"></video>
+    </section>
+
+    <section>
+        <h2>Loop Animations</h2>
+        <p>
+            I started exploring 3D models. The first model I made by linking the music so that the model dynamically follows the drums. The second was to change the 3D model through noise. The third was a dynamic circle that relied on a tube model.
+        </p>
+        <video src="video/3d animation.mp4" controls alt="Looping"></video>
+    </section>
+
+    <section>
+        <h2>Layer is important!</h2>
+        <p>
+            During the process, I sometimes have situations where the effects are not successfully applied. I never knew what was causing this until I inadvertently clicked on the Input layer.
+        </p>
+        <img src="images/layer1.png" alt="Layer1">
+        <img src="images/layer2.png" alt="layer2">
+        <p>
+            I went to the community and searched for the reasons. It's because TouchDesigner input processing follows a specific order, with the first connected usually serving as the background layer; most mixing patterns are mathematically asymmetric, resulting in different results for A on B versus B on A.
+        </p>
+    </section>
+
+    <section>
+        <h2>Camera Position</h2>
+        <p>
+            Just like any other 3D software, TouchDesigner can control camera movement. I tried to show different angles of the same model by changing the camera position and light source angle.
+        </p>
+        <video src="video/camera.mp4" controls alt="Video"></video>
+    </section>
+
+    <div class="modal" id="imageModal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImg">
+    </div>
+    
+    <div class="modal" id="videoModal">
+        <span class="close">&times;</span>
+        <video class="modal-content" id="modalVideo" controls></video>
+    </div>
+    
+    <script>
+        // 创建模态框功能
+        document.addEventListener('DOMContentLoaded', function() {
+            // 获取所有元素
+            const images = document.querySelectorAll('img:not(.modal-content)');
+            const videos = document.querySelectorAll('video:not(.modal-content)');
+            const imageModal = document.getElementById('imageModal');
+            const videoModal = document.getElementById('videoModal');
+            const modalImg = document.getElementById('modalImg');
+            const modalVideo = document.getElementById('modalVideo');
+            const closeButtons = document.querySelectorAll('.close');
+            
+            // 为所有图片添加点击事件
+            images.forEach(img => {
+                img.addEventListener('click', function() {
+                    imageModal.style.display = "flex";
+                    modalImg.src = this.src;
+                });
+            });
+            
+            // 为所有视频添加点击事件
+            videos.forEach(video => {
+                video.addEventListener('click', function() {
+                    videoModal.style.display = "flex";
+                    // 克隆视频源属性
+                    modalVideo.src = this.src;
+                    modalVideo.play();
+                });
+            });
+            
+            // 关闭模态框
+            closeButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    imageModal.style.display = "none";
+                    videoModal.style.display = "none";
+                    modalVideo.pause();
+                });
+            });
+            
+            // 点击模态框背景也可以关闭
+            window.addEventListener('click', function(event) {
+                if (event.target === imageModal) {
+                    imageModal.style.display = "none";
+                }
+                if (event.target === videoModal) {
+                    videoModal.style.display = "none";
+                    modalVideo.pause();
+                }
+            });
+            
+            // 为模态框添加键盘ESC关闭功能
+            document.addEventListener('keydown', function(event) {
+                if (event.key === "Escape") {
+                    imageModal.style.display = "none";
+                    videoModal.style.display = "none";
+                    modalVideo.pause();
+                }
+            });
+        });
+    </script>
+</div>
+    
+</body>
+</html>
